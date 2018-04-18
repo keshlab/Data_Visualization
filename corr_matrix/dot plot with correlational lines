@@ -1,0 +1,10 @@
+library(ggplot2)
+ggplot(df, aes(x=xcolumn, y=ycolumn, group=subjects)) + geom_point(aes(color=subject)) + geom_line(aes(color=subject)) 
++ labs(x='name of x axis' , y= 'name of y axis', title = 'graph title'
+
+#if you need to flip the axis 
++ scale_xory_discrete(limits = rev(unique(sort(df$xorycolumnname))))
+
+ex:
+ggplot(ba46, aes(x=area, y=zfc, group=Subject)) + geom_point(aes(color=Subject)) + geom_line(aes(color=Subject)) 
++ labs(x='Mood State', y='zFC Scores', title="Brodmann's Area 46 to Amygdala") + scale_x_discrete(limits=rev(unique(sort(ba46$area))))
